@@ -4,20 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #111111;
-  color: #ffffff;
-  font-family: 'Cairo', sans-serif;
-  direction: rtl;
+@layer base {
+  body {
+    @apply bg-[#111111] text-white overflow-x-hidden;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+  }
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
+@layer components {
+  .netflix-gradient {
+    background: linear-gradient(to top, #111111 0%, transparent 100%);
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-.focus-ring:focus {
-  outline: 3px solid #e50914;
-  box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+  .focus-ring:focus {
+    @apply outline-none ring-4 ring-[#e50914] ring-offset-2 ring-offset-[#111111];
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+  }
 }
