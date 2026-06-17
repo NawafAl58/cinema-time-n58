@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0a] text-white overflow-x-hidden antialiased;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.hero-overlay {
+  background: linear-gradient(77deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.8) 20%, rgba(10,10,10,0) 50%);
+}
+
+.hero-v-overlay {
+  background: linear-gradient(to top, #0a0a0a 0%, transparent 100%);
+}
+
+.focus-ring {
+  transition: all 0.2s ease-in-out;
+}
+
+.focus-ring:focus {
+  outline: 3px solid #e50914;
+  outline-offset: 2px;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.5);
+}
