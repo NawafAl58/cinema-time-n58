@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #111111;
+  color: #ffffff;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.focus-ring:focus {
+  outline: 3px solid #e50914;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+}
